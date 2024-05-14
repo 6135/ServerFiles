@@ -1,0 +1,10 @@
+default via 10.0.0.1 dev enp0s6 
+default via 10.0.0.1 dev enp0s6 proto dhcp src 10.0.0.101 metric 100 
+10.0.0.0/24 dev enp0s6 proto kernel scope link src 10.0.0.101 
+10.0.0.0/24 dev enp0s6 proto kernel scope link src 10.0.0.101 metric 100 
+10.0.1.0/24 dev enp1s0 proto kernel scope link src 10.0.1.2 
+169.254.0.0/16 dev enp0s6 scope link 
+169.254.0.0/16 dev enp0s6 proto dhcp scope link src 10.0.0.101 metric 100 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
+172.18.0.0/16 dev br-347f06388923 proto kernel scope link src 172.18.0.1 
+172.28.0.0/16 dev br-7ae5807ed71b proto kernel scope link src 172.28.0.1 

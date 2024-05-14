@@ -1,0 +1,30 @@
+services:
+  mc:
+    restart: unless-stopped
+    container_name: curse-create-progress
+    image: itzg/minecraft-server:java17-jdk
+    volumes:
+      - ./files:/data
+    ports:
+      - 10.0.0.101:25565:25565
+    environment:
+      EULA: "TRUE"
+      TYPE: "AUTO_CURSEFORGE"
+      CF_API_KEY: '$2a$10$.9KeaLflPdy.XuZU5/aLFOgRfZhbt3TTFt9Kb6hTm6HzFUUPCGihO'
+      CF_SLUG: "progress"
+      DEBUG: "false"
+      MEMORY: "4G"
+      #OPS: "[6135]"
+      ALLOW_FLIGHT: "true"
+      MOTD: "Create: Progress"
+      ENABLE_AUTOPAUSE: "TRUE"
+      AUTOPAUSE_TIMEOUT_EST: "21600"
+      AUTOPAUSE_TIMEOUT_INIT: "21600" 
+      MAX_TICK_TIME: "-1"
+      CF_EXCLUDE_MODS: |
+        317856
+    tty: true
+    stdin_open: true
+
+volumes:
+  files: {}
